@@ -8,7 +8,7 @@
 // RESET
 @import "reset";
 
-$font-color: #eee;
+$font-color: #999;
 
 // COMMON
 body {
@@ -17,12 +17,14 @@ body {
 
 // HEADER
 header {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  border-bottom: 1px solid #999;
+  // border-bottom: 1px solid #999;
   padding: 5vh 5vw;
+  z-index: 2;
 
   h1 a {
     font: bold 36px/50px "Shadows Into Light";
@@ -50,12 +52,148 @@ header {
       margin: 0px 10px;
 
       a {
+        font-size: 25px;
         color: $font-color;
       }
     }
   }
 
+  #snb {
+    display: none;
+  }
+
   .btn-menu {
     display: none;
+    color: $font-color;
+    font-size: 30px;
+  }
+}
+
+// VIDEO
+figure {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: 1;
+
+  video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .text {
+    position: absolute;
+    left: 12vw;
+    top: 50%;
+    transform: translateY(-50%);
+
+    p {
+      font: bold 7vw/1 "Shadows Into Light";
+      color: rgb(199, 197, 177);
+    }
+
+    ul {
+      display: flex;
+      margin-top: 30px;
+      // margin-left: 15px;
+
+      li {
+        margin: 0px 30px;
+
+        a {
+          display: flex;
+          align-items: center;
+        }
+        a span {
+          margin-right: 10px;
+          color: #fff;
+        }
+
+        i {
+          font-size: 20px;
+          color: rgb(199, 197, 177);
+          margin-right: 15px;
+        }
+
+        a strong {
+          font: 1.5vw/1 "Shadows Into Light";
+          color: rgb(199, 197, 177);
+          letter-spacing: 1px;
+        }
+      }
+    }
+  }
+}
+
+// FOOTER
+footer {
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  text-align: center;
+  font: 20px/1 "Shadows Into Light";
+  letter-spacing: 2px;
+  text-align: center;
+  padding: 5vh 5vw;
+}
+
+// 반응형
+@media screen and (max-width: 968px) {
+  header {
+    #gnb {
+      display: none;
+    }
+    .sns {
+      display: none;
+    }
+    #sng {
+      display: block;
+    }
+    .btn-menu {
+      display: block;
+    }
+
+    #snb {
+      display: block;
+      .sub-menu {
+        position: absolute;
+        right: 5vw;
+        background-color: $font-color;
+        border: 1px solid $font-color;
+        border-radius: 10px;
+        text-align: right;
+        padding: 10px 25px;
+        transition: 0.4s;
+
+        &.hide {
+          opacity: 0;
+        }
+
+        li {
+          padding: 10px 0px;
+          font: 16px/1 "Shadows Into Light";
+        }
+        a i {
+          margin-left: 8px;
+        }
+      }
+    }
+  }
+
+  figure {
+    .text {
+      p {
+        font-size: 15vw;
+      }
+      ul li a strong {
+        font-size: 3vw;
+      }
+    }
   }
 }
