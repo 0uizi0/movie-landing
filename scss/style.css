@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Hahmlet:wght@400;500;600;700&family=Nanum+Gothic:wght@400;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Hahmlet:wght@400;500;600;700&family=Nanum+Gothic:wght@400;700;800&family=Shadows+Into+Light&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -12,8 +12,45 @@ ol {
 
 a {
   text-decoration: none;
+  color: white;
 }
 
 body {
   background-color: black;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  border-bottom: 1px solid #999;
+  padding: 5vh 5vw;
+}
+header h1 a {
+  font: bold 36px/50px "Shadows Into Light";
+  color: #eee;
+}
+header #gnb {
+  display: flex;
+}
+header #gnb li {
+  margin: 0px 40px;
+}
+header #gnb li a {
+  font: 16px/1 "Shadows Into Light";
+  color: #eee;
+  letter-spacing: 4px;
+}
+header .sns {
+  display: flex;
+}
+header .sns li {
+  margin: 0px 10px;
+}
+header .sns li a {
+  color: #eee;
+}
+header .btn-menu {
+  display: none;
 }/*# sourceMappingURL=style.css.map */
